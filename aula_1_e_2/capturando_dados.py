@@ -24,8 +24,15 @@ def captura_dados():
     print('Você digitou o número: ', float_usuario)
     print (type(float_usuario))
 
+# enquanto tiver este, só vai executar o que estiver aq dentro
 if __name__== '__main__':
     os.system ('cls')
+    print('Executando 1ª vez!')
+    captura_dados()
+    print('Executando 2ª vez!')
+    captura_dados()
+    print('Executando 3ª vez!')
+    captura_dados()
     
    
 
