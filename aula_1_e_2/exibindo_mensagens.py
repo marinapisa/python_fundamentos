@@ -11,7 +11,7 @@ def mostrar_dados():
     print('Boolean', + False)
     print('Boolean', + True)
 
-if __name__=='__main__':
+if __name__== '__main__':
     os.system ('cls')
     mostrar_dados()
 
