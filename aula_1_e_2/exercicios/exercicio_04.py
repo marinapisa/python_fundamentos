@@ -12,10 +12,19 @@ def contagem_regressiva():
     
     print("Contagem regressiva concluída!")
 
+def contagem_regressiva_manual():
+    contador = 5
+    while contador > 0:
+        print(contador)
+        time.sleep(1)
+        contador -= 1
+
+
 
 
 # enquanto tiver este, só vai executar o que estiver aq dentro
-if __name__ == '_main_':
+if __name__ == '__main__':
     os.system ('cls')
     os.system ('python --version')
-    contagem_regressiva()
+    # contagem_regressiva()
+    contagem_regressiva_manual()

@@ -6,8 +6,33 @@
 
 import os
 
+def leia_inteiros():
+    num_inteiro = 0
+    while True:
+        try:
+            num_inteiro = int(input('Digite um número inteiro: '))
+            break
+        except:
+            print('Informe um número inteiro válido!')
+    return num_inteiro
+
+def leia_strings():
+    string = input('informe uma string: ')
+    return string
+
+def leia_float():
+    variavel_float = 0.0
+    while True:
+        try:
+            variavel_float = float(input('Informe um número float: '))
+            break
+        except:
+            print('Informe um número inteiro válido!')
+    return variavel_float
+
+
+
 def digite_num():
-    num_inteiro = 0 
     num_inteiro = int(input('Digite um número inteiro: '))
 
 def digite_quebrado():
@@ -36,7 +61,18 @@ def mostrar_dados():
 if __name__ == '__main__':
     os.system ('cls')
     os.system ('python --version')
-    digite_num()
-    digite_quebrado()
-    digite_str()
-    mostrar_dados()
+    # digite_num()
+    # digite_quebrado()
+    # digite_str()
+    # mostrar_dados()
+
+    num_inteiro = leia_inteiros()
+    # print(num_inteiro)
+    string = leia_strings()
+    # print(string)
+    variavel_float = leia_float()
+    # print(variavel_float)
+
+    lista_de_dados = [num_inteiro, string, variavel_float]
+    for item in lista_de_dados:
+        print(item)
