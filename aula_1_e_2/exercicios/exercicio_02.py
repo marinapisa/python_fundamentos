@@ -4,6 +4,32 @@
 
 import os
 
+def recebe_dados():
+    lista_notas = []
+
+    while len(lista_notas) < 3:
+        try:
+            nota = float(input('informe a nota: '))
+            if nota > 0 and nota <= 10:
+                lista_notas.append(nota)
+                print('Nota inserida com sucesso!')
+        except:
+            print('Informe uma nota válida!!')    
+    return lista_notas
+
+def calcula_media(lista_notas):
+    soma_das_notas = 0
+    for nota in lista_notas:
+        soma_das_notas += nota
+
+        media_notas = soma_das_notas / len(lista_notas)
+    return media_notas
+
+def mostrar_resultado(media_notas):
+    print(f'A média das notas é: {media_notas}')
+
+
+
 def obter_notas():
     soma_notas = 0
     i = 0
@@ -35,4 +61,9 @@ if __name__ == '__main__':
     os.system ('cls')
     os.system ('python --version')
     # calcula_media()
-    obter_notas()
+    # obter_notas()
+   
+    lista_notas = recebe_dados()
+    media_notas = calcula_media(lista_notas)
+    mostrar_resultado(media_notas)
+    
