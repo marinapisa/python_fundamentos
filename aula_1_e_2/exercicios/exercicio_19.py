@@ -68,8 +68,9 @@ def solicita_senha_valida():
             senha_nova = input('Digite a senha novamente: ')
 
             # validar senhas
+            estrelinha = '*'
             if senha_nova == senha_temporaria:
-                print ('Senha ********* criada com sucesso!!')
+                print (f'Senha {estrelinha * len(senha_nova)} criada com sucesso!!')
                 senha_valida = True
             else:
                 print('As senhas não batem, tente outra vez!')
@@ -78,14 +79,6 @@ def solicita_senha_valida():
             print(f'Tem pelo menos 8 caracteres: {validou_caracteres}')
             print(f'Tem letra maiuscula/minuscula: {validou_letras}')
             print(f'Tem pelo menos um numero: {validou_numero}')
-
-
-        
-
-
-
-
-
 
 
 def main():
