@@ -10,21 +10,20 @@ import os
 
 
 lista_letras_minusculas =  [
-    'a', 'b', 'c', 'd', 'e', 'f'
-    'g', 'h', 'i', 'j' 'k', 'l', 'm'
+    'a', 'b', 'c', 'd', 'e', 'f',
+    'g', 'h', 'i', 'j' 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't',
     'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
-lista_letras_maiúsculas =  [
-    'A', 'B', 'C', 'D', 'E', 'F'
-    'G', 'H', 'I', 'J' 'K', 'L', 'M'
+lista_letras_maiusculas =  [
+    'A', 'B', 'C', 'D', 'E', 'F',
+    'G', 'H', 'I', 'J' 'K', 'L', 'M',
     'N', 'O', 'P', 'Q', 'R', 'S', 'T',
     'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 
 lista_numeros = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9']
-
 
 def solicita_senha_valida():
     senha_valida = False
@@ -50,9 +49,8 @@ def solicita_senha_valida():
         for letra in lista_chars:
             if letra in lista_letras_minusculas:
                 minuscula_apareceu = True
-            elif letra in lista_letras_maiúsculas:
+            elif letra in lista_letras_maiusculas:
                 maiuscula_apareceu = True
-
 
         # verifica se achou tanto uma maiuscula como uma minuscula
         if maiuscula_apareceu is True and minuscula_apareceu is True:
@@ -65,7 +63,17 @@ def solicita_senha_valida():
                 break
 
         if validou_numero is True and validou_letras is True and validou_caracteres is True:
-            ...
+
+            # pedir e validar segunda senha
+            senha_nova = input('Digite a senha novamente: ')
+
+            # validar senhas
+            if senha_nova == senha_temporaria:
+                print ('Senha ********* criada com sucesso!!')
+                senha_valida = True
+            else:
+                print('As senhas não batem, tente outra vez!')
+
         else:
             print(f'Tem pelo menos 8 caracteres: {validou_caracteres}')
             print(f'Tem letra maiuscula/minuscula: {validou_letras}')
@@ -81,7 +89,7 @@ def solicita_senha_valida():
 
 
 def main():
-   ...
+   solicita_senha_valida()
 
 if __name__ == '__main__':
     os.system ('cls')
