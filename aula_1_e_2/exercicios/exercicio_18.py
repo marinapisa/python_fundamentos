@@ -34,26 +34,30 @@ def ler_notas(quantidade_notas):
             nota = float(input(f'Informe a {len(lista_notas)+1}ª nota: '))
             if nota >= 0  and nota <= 10:
                 lista_notas.append(nota)
-
         except:
             print('Informe uma nota válida!')
 
     return lista_notas
 
+def calcula_media(lista_notas):
+    soma = 0
+    for nota in lista_notas:
+        soma += nota
+    return soma / len(lista_notas)
 
-def calcula_media():
-    ...
-
-def verificar_media():
-    ...
+def verificar_media(media):
+    if media >= 6:
+        print (f'O aluno foi Aprovado com média: {media}')
+    else:
+        print(f'O aluno foi Reprovado com média: {media}')
 
 def script():
   quantidade_notas = ler_quantidade_notas()
   lista_notas = ler_notas(quantidade_notas)
   print('lista: ' , lista_notas)
+  media = calcula_media(lista_notas)
+  verificar_media(media)
   
-  
-
 
 if __name__ == '__main__':
     os.system ('cls')
