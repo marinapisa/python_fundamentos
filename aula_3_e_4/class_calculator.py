@@ -60,6 +60,7 @@ class Calculator:
                 else:
                     print('Informe números maiores que Zero.')
             except KeyboardInterrupt:
+                print('\nPrograma encerrado manualmente ctrl c')
                 quit()
             except:
                 print('Informe números válidos!')
