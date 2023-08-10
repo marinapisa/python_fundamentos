@@ -1,10 +1,17 @@
 class Animal:
   
     # Construtor
-    def __init__(self, raca, cor, idade):
-        self.raca = raca
-        self.cor = cor
-        self.idade = idade
+
+    # private -> __nome
+    # protected -> _nome 
+    # public -> nome
+
+
+    def __init__(self, raca, cor, idade, nome):
+        self._raca = raca
+        self._cor = cor
+        self._idade = idade
+        self.__nome = nome
         print('Objeto instanciado com sucesso!')
 
 
@@ -12,31 +19,46 @@ class Animal:
 
     @property
     def raca(self):
-        return 'Raça -> ' + self.raca
+        return 'Raça -> ' + self._raca
 
     @property
     def cor(self):
-        return 'Cor -> ' + self.cor
+        return 'Cor -> ' + self._cor
     
     @property
     def idade(self):
-        return f'Idade ->  {self.idade}'
+        return f'Idade ->  {self._idade}'
+    
+    @property
+    def nome(self):
+        return f'Nome ->  {self.__nome}'
     
     # SETTERS
 
-    def set_raca(self, raca_nova):
-        self.raca = raca_nova
+    @raca.setter
+    def raca(self, raca_nova):
+        print(f'setou raça {self._raca} para {raca_nova}')
+        self._raca = raca_nova
 
-    def set_cor(self, cor_nova):
-        self.cor = cor_nova
+    @cor.setter
+    def cor(self, cor_nova):
+        print(f'setou cor {self._cor} para {cor_nova}')
+        self._cor = cor_nova
     
-    def set_idade(self, idade_nova):
-        self.idade = idade_nova
+    @idade.setter
+    def idade(self, idade_nova):
+        print(f'setou idade {self._idade} para {idade_nova}')
+        self._idade = idade_nova
+    
+    @nome.setter
+    def nome(self, nome_novo):
+        print(f'setou nome {self.__nome} para {nome_novo}')
+        self.__nome = nome_novo
 
 # Instancias (criações) dos objetos da classe animal
-leao = Animal('leao da montanha', 'bege', 15)
-gato = Animal('persa', 'cinza', 2)
-pantera = Animal('pantera cor de rosa', 'rosa', 11)
+leao = Animal('leao da montanha', 'bege', 15, 'valente')
+gato = Animal('persa', 'cinza', 2, 'mimi')
+pantera = Animal('pantera cor de rosa', 'rosa', 11, 'bruce')
 
 # utilizar getters para cada objeto
 print(leao.raca)
@@ -50,6 +72,17 @@ print(gato.idade)
 print(pantera.raca)
 print(pantera.cor)
 print(pantera.idade)
+
+# UTILIZAR SETTERS
+pantera.idade = 56
+print(pantera.idade)
+pantera.cor = 'verde'
+print(pantera.cor)
+gato.raca = 'siames'
+print(gato.raca)
+
+print(pantera.nome)
+
 
 
 
