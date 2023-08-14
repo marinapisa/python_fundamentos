@@ -1,0 +1,21 @@
+class Vendedor():
+    def __init__ (self,nome): #colocar aqui todas as informações necessárias para criar um vendedor
+        self.nome  = nome # o nome de fato do vendedor será passado após a criação da isntancia
+        self.vendas = 0
+
+    def vendeu(self, vendas):
+        self.vendas = vendas # novamente, essa informação será passada posteriormente, na criação da instancia
+
+    def bateu_meta(self, meta):
+        if self.vendas >= meta:
+            print(f'{self.nome} bateu a meta!')
+        else:
+            print(f'{self.nome} não bateu a meta!')
+
+vendedor_01 = Vendedor('Marina')
+vendedor_01.vendeu(1000)
+vendedor_01.bateu_meta(600)
+
+vendedor_02 = Vendedor('Alon')
+vendedor_02.vendeu(300)
+vendedor_02.bateu_meta(600)
