@@ -14,11 +14,10 @@ from abc import ABC, abstractmethod
 class Banco(ABC):
     def __init__(self, nome, saldo, numero_conta):
         self.nome = nome
-        self.saldo = saldo
+        self.__saldo = saldo
         self.numero_conta = numero_conta
-       
 
-    @abstractmethod
+    @abstractmethod #quando tiver @ é decoradores
     def depositar(self):
         pass
 
@@ -30,54 +29,89 @@ class Banco(ABC):
     def sacar(self):
         pass
 
-    @abstractmethod
-    def exibir_informacoes(self):
-        pass
+    # @abstractmethod
+    # def exibir_informacoes(self):
+    #     pass
+
+
+
+
+    
 
 # subclasses:
 
 class ContaCorrente(Banco):
     def depositar(self, deposito):
-        self.deposito = deposito
+        if deposito > 0:
+            self._Banco__saldo += deposito
+            print('Deposito realizado com sucesso!')
+        else:
+            print('Informe um valor acima de zero.')
 
-    def ver_saldo(self, saldo):
-        self.saldo = self.deposito + saldo
+    def ver_saldo(self):
+        return self._Banco__saldo
 
     def sacar (self, valor_saque):
-        self.valor_saque = valor_saque
+        self._Banco__saldo -= valor_saque
+        print(f'Saque de R${valor_saque} realizado com sucesso!')
 
-    def exibir_informacoes(self):
-        print(f'\nNome {self.nome}')
-        print(f'\nSaldo {self.saldo}')
-        print(f'\n Numero da conta:  {self.numero_conta}')
+    # def exibir_informacoes(self):
+    #     print(f'\nNome {self.nome}')
+    #     print(f'\nSaldo {self.saldo}')
+    #     print(f'\n Numero da conta:  {self.numero_conta}')
 
         
 
 class ContaPoupanca(Banco):
     def depositar(self, deposito):
-        self.deposito = deposito
+        if deposito > 0:
+            self._Banco__saldo += deposito
+            print('Deposito realizado com sucesso!')
+        else:
+            print('Informe um valor acima de zero.')
+    
+    def ver_saldo(self):
+        return self._Banco__saldo
+    
+    def sacar (self):
+        print('Não é permitido saque na conta poupança!')
 
-    def ver_saldo(self, saldo):
-        self.saldo = saldo
-
-    def exibir_informacoes(self):
-        print(f'\nNome: {self.nome}')
-        print(f'\nSaldo: {self.saldo}')
-        print(f'\n Numero da conta:  {self.numero_conta}')
+    # def exibir_informacoes(self):
+    #     print(f'\nNome: {self.nome}')
+    #     print(f'\nSaldo: {self.saldo}')
+    #     print(f'\n Numero da conta:  {self.numero_conta}')
 
 
 
 if __name__ == '__main__':
 
-    cooperado1 = ContaCorrente(
-        nome ='Marina',
-        saldo = 5000,
-        numero_conta = 666
-        )
+    conta1 = ContaPoupanca('Rodrigo', 500, 66666)
+    print(conta1.nome)
+    print(conta1.ver_saldo())
+    conta1.sacar()
+    print(conta1.ver_saldo())
+    conta1.depositar(100)
+    print(conta1.ver_saldo())
 
-    cooperado1.exibir_informacoes()
-    cooperado1.saldo()
-    cooperado1.depositar(100)
-    cooperado1.saldo()
-    cooperado1.sacar(500)
-    cooperado1.saldo()
+    conta2 = ContaCorrente('Adrian', 6000, 99999)
+    print(conta2.ver_saldo())
+    conta2.sacar(2000)
+    print(conta2.ver_saldo())
+    conta2.depositar(10000)
+    print(conta2.ver_saldo())
+
+
+
+
+    # cooperado1 = ContaCorrente(
+    #     nome ='Marina',
+    #     saldo = 5000,
+    #     numero_conta = 666
+    #     )
+
+    # cooperado1.exibir_informacoes()
+    # cooperado1.saldo()
+    # cooperado1.depositar(100)
+    # cooperado1.saldo()
+    # cooperado1.sacar(500)
+    # cooperado1.saldo()
