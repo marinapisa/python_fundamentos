@@ -96,7 +96,8 @@ Insira a operação (1 ao 6): """
             elif operacao == 5:
                 pass
             elif operacao == 6:
-                pass
+                print('Programa Encerrado')
+                break
             else:
                 print('Informe uma opção válida!')
 
@@ -104,6 +105,7 @@ Insira a operação (1 ao 6): """
             print(f'Ocorreu um erro: {str(e)}')
 
     conn.close()
+    print('Conexão encerrada.')
 
 if __name__ == '__main__':
     database_manager()
