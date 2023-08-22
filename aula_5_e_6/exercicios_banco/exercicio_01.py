@@ -79,10 +79,12 @@ class Aluno:
         conexao = sqlite3.connect('escola.db')
         cursor = conexao.cursor()
         sql_string = f"""
-            select # from Alunos\
+            select * from Alunos\
             where id = {id_aluno}
         """
         cursor.execute(sql_string)
+        linha_selecionada = cursor.fetchone()
+        print(linha_selecionada)
         cursor.close()
         print(f'Estes são os dados do aluno com o id {id_aluno}!')
 
@@ -94,9 +96,12 @@ class Aluno:
         conexao = sqlite3.connect('escola.db')
         cursor = conexao.cursor()
         sql_string = f"""
-            select # from Alunos
+            select * from Alunos
         """
         cursor.execute(sql_string)
+        lista_dados = cursor.fetchall()
+        for linha in lista_dados:
+            print(linha)
         conexao.close()
         print(f'Estes são todos os alunos cadastrados na Escola!')
 
@@ -119,11 +124,11 @@ def database_manager():
     conexao.close()
 
     menu_interface = '''
-        1 - Criar registro de novo Aluno
-        2 - Visualizar registro existente pelo ID
-        3 - Visualizar todos os Alunos
-        4 - Sair
-        Insira a operação desejada: 
+    1 - Criar registro de novo Aluno
+    2 - Visualizar registro existente pelo ID
+    3 - Visualizar todos os Alunos
+    4 - Sair
+    Insira a operação desejada: 
     '''
 
     while True:
