@@ -21,14 +21,11 @@ import sqlite3
 import os
 from abc import ABC, abstractmethod
 
-
-
 class Pessoa(ABC):
     def __init__(self, nome, idade,):
         self.nome = nome
         self.idade = idade
-    
-    
+       
     @abstractmethod
     def exibir_info():
         pass
@@ -41,12 +38,33 @@ class Pessoa(ABC):
 
 
 class Aluno(Pessoa):
-      def exibir_info(self):
+    def exibir_info(self):
+        print('Dados do Aluno: ')
+        print(f'Nome: {self.nome}')
+        print(f'Idade: {self.idade}')
+
+
+    def calcular_salario(self):
+        print('Método Calcular salário não se aplica a alunos.')
+
           
-
-
 class Professor(Pessoa):
-    pass
+    def __init__(self,disciplina, salario, carga_horaria):
+        self.disciplina = disciplina
+        self.salario = salario
+        self.carga_horaria = carga_horaria
+
+    def exibir_info(self):
+        print('Dados do professor: ')
+        print(f'Nome: {self.nome}')
+        print(f'Idade: {self.idade}')
+        print(f'Disciplina: {self.disciplina}')
+      
+    
+    
+    def calcular_salario(self):
+        # Implemente o método calcular_salario() para professores, calculando o salário com base na carga horária e valor por hora.
+
 
 
 
