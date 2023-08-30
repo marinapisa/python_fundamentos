@@ -112,16 +112,27 @@ def rodar_calculadora(numero_1, numero_2, operacao):
 # funcao para verificar quantas vezes uma letra especificada pelo usuario aparece 
 # dentro de um texto tambem informado pelo usuario e mostre quantas vezes 
 # numeros de 1 a 9 aparecem caso tenha numeros no texto
-def verifica_letras_numeros_frase():
-    ...
+def verifica_letras_numeros_frase(frase, letra):
+    # chars_letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    chars_numeros = [1,2,3,4,5,6,7,8,9,0]
+    contador_letra = 0
+    contator_numero = 0
+    for caracter in frase:
+        if caracter == letra:
+            contador_letra += 1
+        else:
+            False
+                       
+    print(f'A letra {letra}, aparece {contador_letra} vezes na frase')
 
 
 # funcao para verificar quanto um funcionario ganhou durante um mes,
 # com base no valor que o colaborador ganha por hora e em quantos dias
 # aquele mes atual tem. Passar tbm a quantidade de horas trabalhadas por dia
 # Todas essas informacoes devem ser passadas por parametro
-def funcao():
-    ...
+def verifica_salario_mensal_dia_hora(qt_hora, valor_hora, qt_dia):
+    salario = (qt_hora * valor_hora) * qt_dia
+    print(f'O salário é {round(salario, 2)}, equivalente a {qt_dia} dias de trabalho')
 
 
 # funcao para verificar quantos items existem em uma lista no total,
@@ -147,7 +158,8 @@ def main():
 7 - retorna_menor_numero_em_lista
 8 - retorna_quantidade_de_impares_e_pares_em_lista
 9 - rodar_calculadora
-10 - 
+10 - verifica_letras_numeros_frase
+11 - verifica_salario_mensal_dia_hora
 --> opcao: '''
 
     while True:
@@ -273,12 +285,16 @@ def main():
             elif funcao_selecionada == 10:
                 frase = input('Informe a frase: ')
                 letra = input('Informe a letra que deseja contar: ')
+                verifica_letras_numeros_frase(frase, letra)
 
-                
 
             elif funcao_selecionada == 11:
+                # salario = (qt_hora * valor_hora) * qt_dia
+                qt_hora = int(input('Quantas horas por dia foram trabalhadas: '))
+                valor_hora = float(input('Qual o valor da hora: '))
+                qt_dia = int(input('Quantos dias foram trabalhados: '))
+                verifica_salario_mensal_dia_hora(qt_hora, valor_hora, qt_dia)
 
-                ...
 
             elif funcao_selecionada == 12:
                 
