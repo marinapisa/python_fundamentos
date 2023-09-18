@@ -1,0 +1,3 @@
+Papiro
+Código e ambientação com python estruturado
+primeiro paradigma
