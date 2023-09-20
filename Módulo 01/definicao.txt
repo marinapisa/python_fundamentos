@@ -1,3 +1,14 @@
 Papiro
 Código e ambientação com python estruturado
 primeiro paradigma
+
+python é considerado liguagem de alto nivel por se assemelhar com a linguagem humana, portugues, ingles...
+baixo nível assembly
+
+estrutura de controle de fluxo que pega a variável e retorna um resultado.
+
+palavra reservada - especificidade do sistema while, for, if, in, 
+
+lista vetor que contem indices numericos ou letras
+
+dicionário - forma de acesso a variável pela chave

@@ -27,4 +27,8 @@ def menu():
 
         var = int(input('Digite 1 para continuar'))
 
+        #  diferença entre case e if: deve ser usado case quando o caminhos possiveis ja estão premeditados, o if nao se tem controle sobre os dados.
+
+        
+
 

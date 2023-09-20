@@ -3,3 +3,6 @@ python funcional
 segundo paradigma
 uma função é um bloco de código que pode ser chamado conforme a necessidade,
 este bloco de código tem a caracteristica da responsabilidade única
+
+
+
