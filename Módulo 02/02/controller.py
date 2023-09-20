@@ -45,3 +45,13 @@ def update(cliente):
 
     else:
         print('Cliente nao encontrado!')
+
+def delete(cliente):
+    with open('pessoas.txt', 'r') as arquivo:
+        lines = arquivo.readlines()
+        
+    with open('pessoas.txt', 'w') as arquivo:
+        for cliente in lines:
+            novo_nome = ''
+            nova_idade = ''
+            cliente = cliente.strip()
