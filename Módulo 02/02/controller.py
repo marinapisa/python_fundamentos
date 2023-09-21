@@ -47,11 +47,20 @@ def update(cliente):
         print('Cliente nao encontrado!')
 
 def delete(cliente):
+    flag = False
+
     with open('pessoas.txt', 'r') as arquivo:
         lines = arquivo.readlines()
         
     with open('pessoas.txt', 'w') as arquivo:
-        for cliente in lines:
-            novo_nome = ''
-            nova_idade = ''
-            cliente = cliente.strip()
+        for line in lines:
+
+            if cliente not in line:
+                if cliente not in line:
+                    arquivo.write(line)
+                else:
+                    flag = True
+    if flag:
+        print('O registro foi deletado com sucesso!')
+    else:
+        print('Não encontrado!')

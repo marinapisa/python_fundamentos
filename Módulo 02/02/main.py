@@ -28,8 +28,5 @@ menu()
 
 
 
-# create(input('digite seu nome: '))
-# print(read())
-# search(input('Digite o nome que deseja pesquisar:'))
-# update(input('Digite a pessoa que deseja atualizar: '))
+
 
