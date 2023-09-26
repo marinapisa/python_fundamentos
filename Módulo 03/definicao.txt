@@ -1,3 +1,11 @@
 3º paradigma - orientação a objeto
 
 orientação a objeto ela é baseada toda em cima das caracteristicas de uma classe
+
+Monolito
+Um monolito é quando eu tenho centralizado em um unico projeto nosso front end e nosso backend
+
+Micro Serviço
+Particionamos o back end em um projeto e o front end em outro projeto.
+
+ fazer 4 classes, 2 cada uma , no minimo 8 atributos  usar construtor getter setter e str, nome das classes e atrbutos a gente escolhe
