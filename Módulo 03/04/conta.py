@@ -44,4 +44,4 @@ class Conta:
         
    # final de uma classe - saída
     def __str__(self):
-        return f'{self.numero} {self.titular} {self.cpfpf} {self.saldo} {self.limite}'
+        return f'NUMERO DA CONTA: {self.numero}\nTITULAR: {self.titular}\nCPF: {self.cpf}\nSALDO: {self.saldo}\nLIMITE: {self.limite}'
